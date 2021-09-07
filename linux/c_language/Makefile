@@ -9,6 +9,7 @@ SUBDIRS = \
 	syslog \
 	semaphore \
 	terminal \
+	gpio \
 	i2c \
 	shared_memory
 
