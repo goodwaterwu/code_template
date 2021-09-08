@@ -37,7 +37,8 @@ int main(int argc, char *argv[])
 		goto exit_on_err;
 	}
 
-	write(STDOUT_FILENO, addr, statbuf.st_size);
+	if (write(STDOUT_FILENO, addr, statbuf.st_size) == -1)
+		error_en("Write standard output failed");
 	printf("\n");
 exit_on_err:
 	if (close(fd) == -1)
