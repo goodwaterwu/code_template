@@ -2,6 +2,7 @@ include ../Makefile.in
 
 SUBDIRS = \
 	aes \
+	rsa \
 	sha256
 
 .PHONY: all
