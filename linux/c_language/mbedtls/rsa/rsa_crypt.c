@@ -7,6 +7,8 @@
 #include <mbedtls/bignum.h>
 #include <mbedtls/rsa.h>
 
+#define MAX(x, y) ((x) > (y)) ? (x) : (y)
+
 /**
  * Write MPI to buffer.
  * @param[in] prefix The prefix of MPI.
@@ -348,8 +350,9 @@ err_genkey:
 bool rsa_encrypt(unsigned char *output, unsigned char *input,
 		size_t length, char *key, int padding)
 {
-	FILE *file = NULL;
 	bool ret = false;
+	char *tmp = NULL;
+	FILE *file = NULL;
 	mbedtls_rsa_context rsa;
 	mbedtls_entropy_context entropy;
 	mbedtls_ctr_drbg_context ctr_drbg;
@@ -384,14 +387,25 @@ bool rsa_encrypt(unsigned char *output, unsigned char *input,
 	if (mbedtls_rsa_import(&rsa, &N, NULL, NULL, NULL, &E))
 		goto err_encrypt;
 
+	tmp = calloc(MAX(length, rsa.len), 1);
+	if (!tmp)
+		goto err_encrypt;
+
 	if (mbedtls_rsa_pkcs1_encrypt(&rsa,
 				mbedtls_ctr_drbg_random,
 				&ctr_drbg, MBEDTLS_RSA_PUBLIC,
-				length, input, output))
+				length, input, (unsigned char *)tmp))
 		goto err_encrypt;
+
+	memcpy(output, tmp, length);
 
 	ret = true;
 err_encrypt:
+	if (tmp) {
+		free(tmp);
+		tmp = NULL;
+	}
+
 	if (file) {
 		fclose(file);
 		file = NULL;
