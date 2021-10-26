@@ -13,7 +13,7 @@ EXECFILE = rsa_crypt
 
 OBJS = $(EXECFILE).o
 
-LDFLAGS += -lmbedtls -lmbedcrypto -lmbedx509
+LIBS += -lmbedtls -lmbedcrypto -lmbedx509
 
 .PHONY: all
 

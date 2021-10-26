@@ -13,7 +13,7 @@ EXECFILE = sha256_cal
 
 OBJS = $(EXECFILE).o
 
-LDFLAGS += -lmbedtls -lmbedcrypto -lmbedx509
+LIBS += -lmbedtls -lmbedcrypto -lmbedx509
 
 .PHONY: all
 
