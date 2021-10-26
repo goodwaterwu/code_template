@@ -5,15 +5,15 @@ LD = $(CROSS_COMPILE)ld
 NM = $(CROSS_COMPILE)nm
 STRIP = $(CROSS_COMPILE)strip
 
-CFLAGS += $(EXTRA_CFLAGS)
-LDFLAGS += $(EXTRA_LDFLAGS)
+CFLAGS += $(EXTRA_CFLAGS) -I $(CURDIR)/include
+LDFLAGS += $(EXTRA_LDFLAGS) -L $(CURDIR)/lib
 LIBS += $(EXTRA_LIBS)
 
 EXECFILE = rsa_crypt
 
 OBJS = $(EXECFILE).o
 
-LDFLAGS += -lmbedtls -lmbedcrypto -lmbedx509
+LIBS += -lmbedtls -lmbedcrypto -lmbedx509
 
 .PHONY: all
 
