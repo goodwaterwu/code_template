@@ -1,0 +1,6 @@
+$ ./ptrace_test
+
+Open another terminal
+
+$ pidof ptrace_test
+$ sudo ./ptrace_monitor
