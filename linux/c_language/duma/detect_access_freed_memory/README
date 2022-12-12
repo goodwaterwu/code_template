@@ -1,0 +1,25 @@
+1) Download duma at https://sourceforge.net/projects/duma/files/duma/
+
+2) Uncompress duma source code and rename to "duma"
+
+3) Build duma, check if duma libraries exist
+
+4) Set core dump
+
+$ ulimit -c unlimited
+
+4) Build the example
+
+$ make
+
+5) Execute the example
+
+$ ./detect_freed
+
+6) Copy the core dump file to this directory and rename to "core"
+(In Ubuntu newer than 18.04, the core dump file may be generated
+in /var/lib/apport/coredump/)
+
+7) Use gdb to debug
+
+$ gdb ./detect_freed ./core
