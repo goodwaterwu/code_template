@@ -3,4 +3,4 @@ $ ./ptrace_test
 Open another terminal
 
 $ pidof ptrace_test
-$ sudo ./ptrace_monitor
+$ sudo ./ptrace_monitor <pid>
