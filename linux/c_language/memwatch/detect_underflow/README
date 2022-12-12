@@ -1,0 +1,17 @@
+1) Clone memwatch from github
+
+$ git clone https://github.com/linkdata/memwatch.git
+
+2) Copy memwatch.c memwatch.h to this directory
+
+$ cp -av memwatch/memwatch.c memwatch/memwatch.h .
+
+3) Build this example
+
+$ make
+
+4) Execute this example
+
+./detect_underflow
+
+memwatch will generate report to memwatch.log
