@@ -8,18 +8,18 @@
 
 $ ulimit -c unlimited
 
-4) Build the example
+5) Build the example
 
 $ make
 
-5) Execute the example
+6) Execute the example
 
 $ ./detect_overrun
 
-6) Copy the core dump file to this directory and rename to "core"
+7) Copy the core dump file to this directory and rename to "core"
 (In Ubuntu newer than 18.04, the core dump file may be generated
 in /var/lib/apport/coredump/)
 
-7) Use gdb to debug
+8) Use gdb to debug
 
 $ gdb ./detect_overrun ./core

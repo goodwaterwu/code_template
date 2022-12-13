@@ -8,18 +8,22 @@
 
 $ ulimit -c unlimited
 
-4) Build the example
+5) Set environment
+
+$ export DUMA_PROTECT_BELOW=1
+
+6) Build the example
 
 $ make
 
-5) Execute the example
+7) Execute the example
 
 $ ./detect_underrun
 
-6) Copy the core dump file to this directory and rename to "core"
+8) Copy the core dump file to this directory and rename to "core"
 (In Ubuntu newer than 18.04, the core dump file may be generated
 in /var/lib/apport/coredump/)
 
-7) Use gdb to debug
+9) Use gdb to debug
 
 $ gdb ./detect_underrun ./core
