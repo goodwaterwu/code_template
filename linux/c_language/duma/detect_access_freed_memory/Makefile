@@ -5,7 +5,7 @@ LD = $(CROSS_COMPILE)ld
 NM = $(CROSS_COMPILE)nm
 STRIP = $(CROSS_COMPILE)strip
 
-CFLAGS += $(EXTRA_CFLAGS) -lduma -lpthread -g
+CFLAGS += $(EXTRA_CFLAGS) -lduma -g
 LDFLAGS += $(EXTRA_LDFLAGS)
 LIBS += $(EXTRA_LIBS) -L./duma
 
