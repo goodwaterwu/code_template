@@ -19,7 +19,8 @@ SUBDIRS = \
 	duma \
 	memwatch \
 	standard/va \
-	standard/qsort
+	standard/qsort \
+	standard/bsearch
 
 .PHONY: all
 
