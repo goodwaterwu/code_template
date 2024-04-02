@@ -18,7 +18,8 @@ SUBDIRS = \
 	ptrace \
 	duma \
 	memwatch \
-	standard/va
+	standard/va \
+	standard/qsort
 
 .PHONY: all
 
