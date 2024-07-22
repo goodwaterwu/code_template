@@ -2,7 +2,8 @@ include ../Makefile.in
 
 SUBDIRS = \
 	bubble_sort \
-	selection_sort
+	selection_sort \
+	insertion_sort
 
 .PHONY: all
 
