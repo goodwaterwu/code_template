@@ -4,7 +4,8 @@ SUBDIRS = \
 	bubble_sort \
 	selection_sort \
 	insertion_sort \
-	merge_sort
+	merge_sort \
+	quick_sort
 
 .PHONY: all
 
