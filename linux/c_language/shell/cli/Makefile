@@ -9,17 +9,17 @@ CFLAGS += $(EXTRA_CFLAGS)
 LDFLAGS += $(EXTRA_LDFLAGS)
 LIBS += $(EXTRA_LIBS)
 
-EXECFILE = cli
+EXECFILE = rcli
 
 OBJS = $(EXECFILE).o
 
 .PHONY: all
 
-all: cli
+all: rcli
 
-.PHONY: cli
+.PHONY: rcli
 
-cli: $(OBJS)
+rcli: $(OBJS)
 	@$(CC) $(OBJS) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@
 	$(info package compiled)
 
